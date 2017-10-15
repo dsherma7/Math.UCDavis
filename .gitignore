@@ -1,2 +1,4 @@
 # Don't Track .DS_Store file
 */.DS_Store
+# Don't track script for copying files
+*/push_prod.sh
