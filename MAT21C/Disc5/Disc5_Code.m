@@ -115,7 +115,7 @@ surf(x, y, z); hold on;
 plot3(p(1),p(2),p(3),'r*','Markersize',15);
 % plot some lines and their midpoints
 r = 1;
-zp = @(x,y)  sqrt(x.^2 + y.^2 + r.^2);
+zp = @(x,y)  x.^2 + y.^2 + 1;
 for i=1:1000
     xr = rand(1)*(-1)^randi([0 1],1);
     yr = rand(1)*(-1)^randi([0 1],1);
@@ -128,7 +128,7 @@ for i=1:1000
     plot3(xr, yr, zr,'*b');
     %plot3((p(1)+p2(1))/2, (p(2) +p2(2))/2, (p(3) +p2(3))/2,'*b'); %mid
 end 
-title('Plotting Midpoint Between Plane and Point','Fontsize',18);xlabel('x','Fontsize',15);
+title('Plotting Midpoints Between Plane and Point','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
 
 figure
