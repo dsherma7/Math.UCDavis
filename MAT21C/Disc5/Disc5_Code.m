@@ -1,4 +1,6 @@
+% ----------------------------------------------------
 % Problem 3) - How to plot two points with connections
+% ----------------------------------------------------
 figure;
 plot3([3 2]',[-2 -6]',[4 -4]'); hold on;
 plot3([2 2]',[-2 -6]',[-4 -4]','r--');
@@ -10,7 +12,10 @@ ylabel('y','Fontsize',16);
 zlabel('z','Fontsize',16);
 title('Problem 3)','Fontsize',18);
 
+
+% ----------------------------------------------------
 % Problem 4 - Plot a sphere with given diameter
+% ----------------------------------------------------
 figure;
 d1 = [2 4 -5]; d2 = [0 -2 4];
 a = (d1(1)+d2(1))/2; b=(d1(2)+d2(2))/2; c=(d1(3)+d2(3))/2; 
@@ -36,7 +41,10 @@ xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);
 zlabel('z','Fontsize',15);
 
+
+% ----------------------------------------------------
 % Prob 5 - Plot objects
+% ----------------------------------------------------
 % a) Sphere about (2,-3,0)
 figure;
 a = 2; b=-3; c=0; r = 4;
@@ -59,8 +67,17 @@ ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
 % c) Cylinder 1/2 units about x-axis
 figure;
 r = 1/2;
-[X,Y,Z] = cylinder(r,100); surf(Z,Y,X);
+[x,y] = meshgrid(-0.5:.05:0.5);
+zp =  sqrt(r.^2-y.^2); % independent of x
+zn = -sqrt(r.^2-y.^2); % independent of x
+surf(x,y,zp); hold on; surf(x,y,zn); 
 title('Problem 5c','Fontsize',18);xlabel('x','Fontsize',15);
+ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
+% Another way to do this is using the cylinder function
+figure;
+r = 1/2;
+[X,Y,Z] = cylinder(r,50); surf(Z,Y,X);
+title('Problem 5c (alternate)','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
 
 % d) Planes at y=1 and y=5
@@ -71,7 +88,6 @@ surf(x, y+1, z); hold on;
 surf(x, y+5, z); 
 title('Problem 5d','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
-
 
 % e) Planes at y=1 and y=5
 figure;
@@ -93,7 +109,6 @@ surf(x, y, z+6);
 surf(x, y, z+2); 
 title('Problem 5f','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
-
 
 % g) Planes at y=2, x=3, and y=3/2 x
 figure;
@@ -142,8 +157,9 @@ surf(x,y,zp(x,y))
 title('Problem 5h','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
 
-
-% Problem 8
+% ----------------------------------------------------
+% Problem 8 - Plotting a Vector and It's Reverse
+% ----------------------------------------------------
 p1 = [1,-1,0]; p2 = [-1,2,6];
 B = p2-p1;
 figure;
@@ -153,8 +169,9 @@ plot3([0 -B(1)],[0 -B(2)],[0 -B(3)],'b');
 title('Problem 8','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
 
-
-% Problem 13
+% ----------------------------------------------------
+% Problem 13 - Women as f(Children)
+% ----------------------------------------------------
 w = @(c) (19/30)*c-40;
 c = 1:120;
 figure;
