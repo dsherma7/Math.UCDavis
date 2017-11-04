@@ -152,3 +152,14 @@ plot3([0 B(1)], [0 B(2)], [0 B(3)],'g');
 plot3([0 -B(1)],[0 -B(2)],[0 -B(3)],'b');
 title('Problem 8','Fontsize',18);xlabel('x','Fontsize',15);
 ylabel('y','Fontsize',15);zlabel('z','Fontsize',15);
+
+
+% Problem 13
+w = @(c) (19/30)*c-40;
+c = 1:120;
+figure;
+plot(c,w(c)); hold on;
+title('Problem 13','Fontsize',18);
+xlabel('c','Fontsize',15);ylabel('w','Fontsize',15);
+
+
