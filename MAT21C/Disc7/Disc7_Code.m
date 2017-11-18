@@ -330,3 +330,51 @@ z = y.^2-x.^2;
 surf(x,y,z); title('z=y^2-x^2','Fontsize',22);
 xlabel('x','Fontsize',16);ylabel('y','Fontsize',16);
 saveas(gcf,'4q.png')
+
+
+% ----------------------------------------------------
+% Problem 5 - Revolve around axes
+% ----------------------------------------------------
+% a)i) y=ln(x-1)
+figure;
+[x,t] = meshgrid(1.1:.1:3,0:.1:2.1*pi);
+y = log(x-1).*sin(t);
+z = log(x-1).*cos(t);
+surf(x,y,z); hold on;
+[x,~] = meshgrid(1.1:.1:3);
+surf(x,log(x-1),zeros(size(x))); 
+title('Problem 5a','Fontsize',18);xlabel('x','Fontsize',16);
+ylabel('y','Fontsize',16);zlabel('z','Fontsize',16);
+
+% a)ii) x=e^y+1
+figure;
+[y,t] = meshgrid(1.1:.1:3,0:.1:2.1*pi);
+x = (exp(y)+1).*sin(t);
+z = (exp(y)+1).*cos(t);
+surf(x,y,z); hold on;
+[y,~] = meshgrid(1.1:.1:3);
+surf(exp(y)+1,y,zeros(size(y))); 
+title('Problem 5a','Fontsize',18);xlabel('x','Fontsize',16);
+ylabel('y','Fontsize',16);zlabel('z','Fontsize',16);
+
+% b)i) z=sin(x)
+figure;
+[x,t] = meshgrid(1.1:.1:3,0:.1:2.1*pi);
+y = sin(x).*sin(t);
+z = sin(x).*cos(t);
+surf(x,y,z); hold on;
+[x,~] = meshgrid(1.1:.1:3);
+surf(x,zeros(size(x)),sin(x)); 
+title('Problem 5b i','Fontsize',18);xlabel('x','Fontsize',16);
+ylabel('y','Fontsize',16);zlabel('z','Fontsize',16);
+
+% b)ii) x=acos(z)
+figure;
+[y,t] = meshgrid(1.1:.1:3,0:.1:2.1*pi);
+x = (exp(y)+1).*sin(t);
+z = (exp(y)+1).*cos(t);
+surf(x,y,z); hold on;
+[y,~] = meshgrid(1.1:.1:3);
+surf(exp(y)+1,y,zeros(size(y))); 
+title('Problem 5a','Fontsize',18);xlabel('x','Fontsize',16);
+ylabel('y','Fontsize',16);zlabel('z','Fontsize',16);
