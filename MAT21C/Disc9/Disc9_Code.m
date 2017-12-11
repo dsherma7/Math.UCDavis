@@ -5,7 +5,7 @@
 figure;
 [x,y] = meshgrid(-10:.5:10);
 z = @(x,y) 3*x.^2-6*x.*y+y.^2+12*x-16*y+1;
-p = [-2,0];
+p = [-3,-1];
 surf(x,y,z(x,y)); hold on;
 plot3(p(1),p(2),z(p(1),p(2)),'r*','Markersize',20);
 
