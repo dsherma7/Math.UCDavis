@@ -39,3 +39,18 @@ xlabel("x","Fontsize",18)
 ylabel("y","Fontsize",18)
 title("Difference","Fontsize",20)
 
+
+% Problem 2 b2
+x = 0:.01:1.2;
+f = @(x) -x.^2+4*x-2;
+g = @(x) 2-x;
+plot(x,f(x),'r-','Linewidth',1); hold on;
+plot(x,g(x),'b--','Linewidth',5);
+xlabel("x","Fontsize",18)
+ylabel("y","Fontsize",18)
+title("Region","Fontsize",20)
+legend({"y_{2016}","y_{2018}"})
+
+
+
+
